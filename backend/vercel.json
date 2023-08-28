@@ -1,0 +1,20 @@
+{
+    "version": 2,
+    "routes": [
+      {
+        "src": "/Login", // veya istediğiniz endpoint yolu
+        "methods": ["POST"],
+        "headers": {
+          "Access-Control-Allow-Origin": ["http://localhost:3000", "https://ticaret-sitesi.vercel.app"]
+        }
+      },
+      {
+        "src": "/Signup", // veya istediğiniz endpoint yolu
+        "methods": ["POST"],
+        "headers": {
+          "Access-Control-Allow-Origin": ["http://localhost:3000", "https://ticaret-sitesi.vercel.app"]
+        }
+      },
+      // Diğer endpoint yollarını da benzer şekilde ekleyin
+    ]
+  }

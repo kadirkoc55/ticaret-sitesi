@@ -8,7 +8,7 @@ const EmployeeModel = require("./models/Employee")
 const app = express()//express uygulaması oluşturur
 app.use(express.json())//json verileri işlenir
 app.use(cors({
-  origin:["http://localhost:3000","https://ticaret-sitesi.vercel.app/"]
+  origin:["http://localhost:3000","https://ticaret-sitesi.vercel.app"]
 }))//cors-origin isteklerine izin verir
 
 mongoose.connect("mongodb+srv://kadirkoc5550:samsunspor5565@cluster0.ptjptc5.mongodb.net/product1?retryWrites=true&w=majority",{
