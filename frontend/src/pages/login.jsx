@@ -19,7 +19,7 @@ function Login() {
           return;
         }
 
-        axios.post('http://localhost:3001/Login',{email,password})
+        axios.post('https://ticaret-sitesi-6tpm.vercel.app/Login',{email,password})
         .then(result =>{console.log(result)
             if(result.data === "başarılı"){
                 navigate('/shop')
@@ -51,7 +51,7 @@ function Login() {
           <strong>Password</strong>
           </label>
           <input 
-           type="text"
+           type="password"
            placeholder="enter password"
            autoComplete="off"
            name="password"

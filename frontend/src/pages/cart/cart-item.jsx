@@ -14,7 +14,7 @@ export const CartItem = (props) => {
         removeFromCart(id);
     
         // Ürünü veritabanından kaldırmak için DELETE isteği yapalım
-        axios.delete(`http://localhost:3001/Cart/${id}`)
+        axios.delete(`https://ticaret-sitesi-6tpm.vercel.app/Cart/${id}`)
           .then((response) => {
             console.log('Ürün başarıyla sepetten kaldırıldı:', response.data);
           })
