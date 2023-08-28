@@ -34,3 +34,32 @@ code {
   width: 50rem;
   height: 12rem;
 }
+
+.signup {
+  height: 43.5rem;
+}
+
+.signup .content {
+  height: 22rem;
+  width: 20rem;
+}
+
+.login {
+  height: 43.5rem;
+}
+
+.login .content {
+  height: 18rem;
+  width: 20rem;
+}
+
+.cart .footer{
+  margin-top: 20rem;
+}
+
+.shop .footer{
+  margin-top:130rem;
+  
+}
+
+

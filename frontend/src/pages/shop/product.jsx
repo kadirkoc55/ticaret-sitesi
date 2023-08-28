@@ -13,6 +13,7 @@ export const Product = (props) => {
   //id'ye karşılık gelen ürünün sepet miktarını cartItemAmount değişkenine atar
   return (
     <div className='product'>
+      
       <img src={productImage} className='w-56 h-96' />
       <div className='description my-5 text-lg uppercase'>
         <p>
@@ -24,6 +25,7 @@ export const Product = (props) => {
       </div>
       <button className=' bg-slate-50 border border-2 border-black capitalize font-medium rounded-full px-2 hover:bg-black transition-all hover:text-white' onClick={()=> addToCart(id)}>add to cart{cartItemAmount > 0 && <>({cartItemAmount})</>}</button>
       {/* cartItemAmount:ürün sepete eklendiyse,sepet miktarını görüntüle */}
+      
     </div>
 
   )

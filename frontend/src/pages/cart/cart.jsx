@@ -3,6 +3,7 @@ import { PRODUCTS } from '../../products'
 import {ShopContext} from '../../context/shop-context'
 import { CartItem } from './cart-item'
 import {useNavigate} from 'react-router-dom'
+import { Footer } from '../../components/footer'
 export const Cart = () => {
   const {cartItems,getTotalCartAmount} = useContext(ShopContext)
   //"useContext" hook'u aracılığıyla ShopContext bağlamından "cartItems(ürünlerin sepetteki miktarını tutar)" ve "getTotalCartAmount(sepet toplam miktarı)" alınır
@@ -19,10 +20,10 @@ export const Cart = () => {
         <h1 className='text-center my-5 text-6xl font-bold capitalize'>Your Cart Items</h1>
       </div>
       <div className='cartItems flex flex-col gap-3 '>
-        {PRODUCTS.map((product)=>{
+        {Array.isArray(PRODUCTS) && PRODUCTS.map((product)=>{
           if(cartItems[product.id]!==0){
             
-            return <CartItem data={product} />
+            return <CartItem key={product.id} data={product} />
           }
         })}
         {/* ürün listesi için "PRODUCTS" kullanılarak,her ürün için "product" bileşeni çağrılır 
@@ -35,10 +36,11 @@ export const Cart = () => {
       <div className='checkout my-3'>
         <p className='text-md font-medium'>Subtotal: ${totalAmount}</p>
           <div className='flex gap-2 my-2'>
-            <button onClick={()=>navigate('/')} className='bg-slate-50 border border-2 border-black rounded-full px-2  font-medium hover:bg-black hover:text-slate-50' >Continue Shopping</button>
-            <button className='bg-slate-50 border border-2 border-black rounded-full px-2  font-medium hover:bg-black hover:text-slate-50'>Checkout</button>
+            <button onClick={()=>navigate('/shop')} className='bg-slate-50 border border-2 border-black rounded-full px-2  font-medium hover:bg-black hover:text-slate-50' >Continue Shopping</button>
+            <button onClick={()=>navigate('/login')} className='bg-slate-50 border border-2 border-black rounded-full px-2  font-medium hover:bg-black hover:text-slate-50'>Checkout</button>
           </div>
       </div>
+      <Footer/>
     </div>
   )
 }

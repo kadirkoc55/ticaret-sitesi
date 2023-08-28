@@ -1,12 +1,12 @@
-import product1  from './images/ıphone.png'
-import product2  from './images/canon.png'
-import product3  from './images/airpods.png'
-import product4  from './images/airpodsmax.png'
-import product5  from './images/macbook.png'
-import product6  from './images/samsung.png'
-import product7  from './images/ps5.png'
-import product8  from './images/smartwatch.png'
-import product9  from './images/tv.png'
+import product1  from './image/ıphone.png'
+import product2  from './image/canon.png'
+import product3  from './image/airpods.png'
+import product4  from './image/airpodsmax.png'
+import product5  from './image/macbook.png'
+import product6  from './image/samsung.png'
+import product7  from './image/ps5.png'
+import product8  from './image/smartwatch.png'
+import product9  from './image/tv.png'
 
 export const PRODUCTS = [
     {

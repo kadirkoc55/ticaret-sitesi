@@ -2,6 +2,8 @@ import React, { useState,createContext } from 'react'
 //bağlam oluşturmak için createContext(bağlam oluştur) ve state kullanılarak içe aktardık
 import { PRODUCTS } from '../products';
 
+
+
 export const ShopContext = createContext(null)
 //başlangıç değeri null(belirsiz) olan bağlam oluşturur ve "shopContex" bağlamına atar.ancak bu değer sonradan "shopContextProvider" bileşeni içinde güncellenecek
 
@@ -17,6 +19,7 @@ const getDefaultCart = ()=>{  //başlangıç boş sepet
 //ürün sepete eklendiğinde veya çıkarıldığında,sepet durumu başlangıç değerine göre güncellenir.
 
 export const ShopContextProvider = (props) => {
+   
     const[cartItems,setCartItems] =useState(getDefaultCart()); // "useState" aracılığıyla "getDefaulCart" bağlamından cartItems() güncellenir.yani başlangıç değerine göre tutulan ürün miktarı güncellenir
 
     const getTotalCartAmount = () => {
@@ -50,8 +53,9 @@ export const ShopContextProvider = (props) => {
 
     console.log(cartItems)
   return(
-    <ShopContext.Provider value={contextValue}>
+    <ShopContext.Provider key="unique-key" value={contextValue}>
         {props.children}
+        
     </ShopContext.Provider>
   )
 }
