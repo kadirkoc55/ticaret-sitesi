@@ -19,7 +19,7 @@ function Login() {
           return;
         }
 
-        axios.post('https://ticaret-sitesi-6tpm.vercel.app/Login',{email,password})
+        axios.post(process.env.REACT_APP_SERVER_URL+'/Login',{email,password})
         .then(result =>{console.log(result)
             if(result.data === "başarılı"){
                 navigate('/shop')

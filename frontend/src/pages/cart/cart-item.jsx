@@ -14,7 +14,7 @@ export const CartItem = (props) => {
         removeFromCart(id);
     
         // Ürünü veritabanından kaldırmak için DELETE isteği yapalım
-        axios.delete(`http://localhost:3001/Cart/${id}`)
+        axios.delete(process.env.REACT_APP_SERVER_URL+`/Cart/${id}`)
           .then((response) => {
             console.log('Ürün başarıyla sepetten kaldırıldı:', response.data);
           })
@@ -34,7 +34,7 @@ export const CartItem = (props) => {
           productImage: productImage
         };
     
-        axios.post('http://localhost:3001/CartItem', newCartItem)
+        axios.post(process.env.REACT_APP_SERVER_URL+'/CartItem', newCartItem)
           .then((response) => {
             console.log('Ürün başarıyla sepete eklendi:', response.data);
           })
@@ -55,7 +55,7 @@ export const CartItem = (props) => {
           quantity: newAmount
         };
     
-        axios.put(`http://localhost:3001/CartItem/${id}`, updatedCartItem)
+        axios.put(process.env.REACT_APP_SERVER_URL+`/CartItem/${id}`, updatedCartItem)
           .then((response) => {
             console.log('Ürün miktarı başarıyla güncellendi:', response.data);
           })

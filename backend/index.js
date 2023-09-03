@@ -1,15 +1,17 @@
 const express = require("express")//sunucu oluşturur
 const mongoose = require("mongoose")//mongodb ile iletişim kurar
 const cors = require("cors")//sunucu güvenliği
+const dotenv = require("dotenv")
+dotenv.config()
 const ProductModel = require('./models/Product')
 const EmployeeModel = require("./models/Employee")
 //EmployeeModel:mongodb de veri modeline ulaşır
 
 const app = express()//express uygulaması oluşturur
 app.use(express.json())//json verileri işlenir
-app.use(cors("http://localhost:3000","https//ticaret-sitesi.onrenderer.com"))//cors-origin isteklerine izin verir
+app.use(cors())//cors-origin isteklerine izin verir
 
-mongoose.connect("mongodb+srv://kadirkoc5550:samsunspor5565@cluster0.ptjptc5.mongodb.net/product1?retryWrites=true&w=majority",{
+mongoose.connect(process.env.MONGO_URI,{
     useNewUrlParser:true,
     useUnifiedTopology: true,
 });
@@ -61,7 +63,7 @@ app.post('/CartItem',(req,res) => {
     .catch(err => res.json(err))
 })
 
-
-app.listen(3001, ()=>{
+const port = process.env.PORT || 3001;
+app.listen(port, ()=>{
     console.log("server çalışıyor")
 })

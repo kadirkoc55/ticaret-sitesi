@@ -12,7 +12,7 @@ function Signup() {
 
       const handleSubmit = (e)=>{
         e.preventDefault() //sayfanın tekrar yüklenerek sunucuya formun gönderilmesini engeller
-        axios.post('https://ticaret-sitesi-6tpm.vercel.app/Signup',{name,email,password}) //axios ile sunucuya post(veri alma) isteği yapılır.
+        axios.post(process.env.REACT_APP_SERVER_URL+'/Signup',{name,email,password}) //axios ile sunucuya post(veri alma) isteği yapılır.
         .then(result =>{console.log(result)
         navigate('/Login') 
         //istek başarılı olunca 'then' bloğu içinde sunucudan gelen yanıt('result')konsola yazdırılır.sonra 'navigate' kullanılarak 'login' yoluna otomatik yönlendirir.
