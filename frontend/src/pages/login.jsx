@@ -16,6 +16,7 @@ function Login() {
         // Eğer email veya password boş ise, işlem yapmadan fonksiyonu sonlandır
         if (!email || !password) {
           console.log("Lütfen e-posta ve şifre girin.");
+          console.log("Lütfen e-posta ve şifre girin.");
           return;
         }
 
